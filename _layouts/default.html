@@ -1,0 +1,53 @@
+
+{% capture build_version %}{{ site.time | date: "%Y%m%d%H%M%S" }}{% endcapture %}<!DOCTYPE HTML>
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }}{% else %}The blog of wangguangjie{% endif %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v={{ build_version }}" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
+    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?917e6ab8343819d1aec112fcdf12ad47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+  </head>
+
+  <body 
+    {% if page.wide_layout %} class="wide"{% endif %}>
+      <header{% unless page.date %} class="main"{% endunless %}>
+
+        <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
+
+        <ul class="navigation">
+          <li><a href="/life/" {% if page.url contains "/life/" %}class="active"{% endif %} title="Photography">Photography</a></li>
+          <li><a href="/outline/"{% if page.url contains "/outline/" %}class="active"{% endif %} title="Blogs">Blogs</a></li>
+          <li><a href="/HIT/" {% if page.url contains "/HIT/" %}class="active"{% endif %} title="Research">Research</a></li>
+          <li><a href="/about/"{% if page.url contains "/about/" %}class="active"{% endif %} title="About">About</a></li>  
+        </ul>
+      </header>
+
+      {{ content }}
+
+      {% include autoreload-in-debug.html %}
+
+      <footer>
+        <p style="font-family: Chalkduster,Lucida Handwriting;
+       font-style: italic;">
+        This is the blog of wangguangjie</a>
+        </p>
+      </footer>
+  </body>
+</html>

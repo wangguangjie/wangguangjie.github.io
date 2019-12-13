@@ -1,0 +1,23 @@
+---
+layout: page
+title: Outline
+---
+
+<style type="text/css">
+	a[href] {
+		color: #BFEFFF;
+	}
+	a[href]:hover {
+		color:#EEAD0E; 
+	}
+</style>
+<h1> <style="font-family: 微软雅黑"><b>我的博客</h1>
+
+<ul style="font-family: 微软雅黑;">
+{% for post in site.posts %}
+  <li>
+    <i>{{ post.date | date: "%b %d, %Y"  }} &mdash; </i>
+    <a href="{{ post.url }}">{% if post.title != "" %}{{ post.title }}{% else %}{{ post.slug }}{% endif %}</a>
+  </li>
+{% endfor %}
+</ul>

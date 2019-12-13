@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+
+<div class="content{% if page.photo_url %} photo-post{% endif %}" style="border-radius: 25px">
+  <div class="post single">
+
+    {% unless page.title_hidden %}
+    <h1 style="font-family: 微软雅黑"><b> {{ page.title }} </b></h1>
+
+    <info datetime="{{ page.date | date: "%Y-%m-%d" }}" style="font-family: Chalkduster">
+      {{ page.date | date: "%b %e, %Y" }}
+    </info>
+
+    {% endunless %}
+
+    <div class="body">
+        {% if page.external_url %}文章发布在 {{ page.external_url }}
+        <script>
+         document.location.href = "{{ page.external_url }}";
+        </script>
+        {% else %}{{ content }}{% endif %}
+    </div>
+    
+    <div class="breaker"></div>
+
+  </div>
+
+  <div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            owner: 'wangguangjie',
+            repo: 'blog-comments',
+            oauth: {
+                client_id: 'ebe1283d5d5e3d3c951a',
+                client_secret: 'c7c59ad87c450562e1cc3a1b43c2e8255890b5bf',
+            },
+        })
+        gitment.render('container')
+        </script>
+    </div>
+</div>
+                     
+{% include autoreload-in-debug.html %}

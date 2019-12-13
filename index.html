@@ -1,0 +1,223 @@
+---
+layout: default
+---
+
+<!-- 博客首页样式-->
+<style type="text/css">
+  /* section2 post 与section3 之间的间距 */
+  div.posts div.end {
+    padding-top:20px;
+  }
+
+  /* 标题 */
+  h3 {
+    margin:0;
+    text-shadow: 5px 5px 5px #ADD8E6;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  /* 普通博客样式设置 */
+  a[href].post-excerpt {
+    display: block;
+    color: inherit;
+    background: none;
+    text-shadow: none;
+    padding-bottom:px;
+    margin-bottom:15px;
+    padding-left: 10px;
+    padding-right: 5px;
+    /*border-bottom: 1px solid #ddd; */
+  }
+
+  a[href].post-excerpt, a[href].post-excerpt a[href] {
+    font-family: Chalkduster;
+    background: #F0FFFF;
+    text-shadow: none;
+  }
+  a[href].post-excerpt:hover {
+    color:#EEAD0E; 
+  }
+
+  a[href].post-excerpt:hover h3 {
+      color: #EEAD0E;
+    }
+
+  a[href].post-excerpt.photo {
+    height:500px;
+    position:relative;
+    background:white;
+    margin-bottom:32px;
+  }
+  
+  a[href].post-excerpt.photo h3 {
+    font-family: Chalkduster; 'Roboto Condensed', helvetica, sans-serif;
+    padding:10px 40px;
+    font-size: 200%;
+    font-weight: 400;
+    color: #FFD700;
+    /*background:rgba(255,200,0,0.1);*/
+    -webkit-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left:0; right:0; bottom:0;
+    z-index:2;
+    /*font-family:inherit;*/
+    text-transform: none;
+    /*font-weight:400;*/
+    line-height:1.1;
+      padding-bottom:1em;
+    }
+
+  a[href].post-excerpt.photo p{
+    color:#FF3E96;
+  }
+
+  a[href].post-excerpt.photo div.c {
+    padding:0;
+    background: transparent no-repeat center center scroll;
+    position: absolute;
+    left:0; top:0; right:0; bottom:0;
+  }
+
+  a[href].post-excerpt.photo div.c div.image {
+    position: absolute;
+    left:0; top:0; right:0; bottom:0;
+    z-index:1;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   }
+
+  a[href].post-excerpt.photo:hover div.c {
+    opacity: 1;
+  }
+
+  a[href].post-excerpt.photo{
+    opacity: 0.8
+  }
+
+  a[href].post-excerpt.photo:hover div.c div.image {
+     opacity:0.3;
+  }
+
+  a[href].post-excerpt:hover .body {
+    color: inherit;
+  }
+
+  .body {
+    color: #555;
+  }
+
+  h3.text {
+    font-weight:400;
+  }
+
+  .body > p:first-child {
+    margin-top:8px;
+  }
+
+  info {
+    display: inline;
+    color: #B9D3EE;
+    white-space: nowrap;
+  }
+
+  /* section3 查看更多设置*/
+  div.end {
+    text-align: right;
+    font-size: 14px;
+  }
+  div.end a:hover {
+    color: #EEAD0E;
+  }
+
+/* Section1鼠标悬停颜色 */
+ li.item1 a:hover, a.update:hover h3{
+    color: #EEAD0E;
+ }
+
+ /** Section1最近更新列表颜色 */
+ ul.items a{
+    color: #BFEFFF;
+ }
+
+  /* 去除下划线 */
+  a[href] {
+    text-decoration: none;
+    color: #BFEFFF;
+  }
+</style>
+
+
+<!-- 首页博客正文 -->
+<div class="content" style="border-radius: 15px">
+  <div class="posts">
+   <!-- section 1.最近更新 -->
+   <a class="update" style="font-family: Chalkduster">
+    <h3 class="text" >Update</h3> 
+    <ul class="items" style="font-family: Times New Roman ;font-size: 14px">
+      {% for post in site.posts limit:5 %}
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="{{ post.url }}"><u><b><i>
+         {{ post.date | date:"%b %Y" }} - 更新了{{ post.title }} </b></u></i>
+        </a>
+      </li>
+     {% endfor %}
+   </ul> 
+   </a>
+
+   <!-- section2 博客列表 -->
+   {% for post in site.posts limit:50 %}
+   <a href="{{ post.url }}"
+     class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        {% if post.photo_url %}
+         <h3><u><b> {{ post.title }} </b></u></h3>
+         <p>{% if post.description %}
+           {{ post.description | markdownify | strip_html }}
+           {% else %}
+           &nbsp;&nbsp; {{ post.excerpt | strip_html }}
+           {% endif %}
+           <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+             <u> {{ post.date | date: "%b %Y" }} </u>
+           </info>
+         </p>
+         <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
+       <!-- 常规博客 -->
+       {% else %}
+         <h3 class="text" style="font-family: 微软雅黑"><b> {{ post.title }} </b></h3>
+         <div class="body" style="font-family: 微软雅黑">
+            <p >
+             {% if post.description %}
+              {{ post.description | markdownify | strip_html }}
+             {% else %}
+               &nbsp;&nbsp; {{ post.excerpt | strip_html }}
+             {% endif %}
+              <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+               <u> {{ post.date | date: "%b %Y" }} </u>
+              </info>
+           </p>
+         </div> 
+       {% endif %}<!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   {% endfor %}
+   
+   <!-- Section3 查看更多博客-->
+   <div class="breaker">
+     <div class="end">
+      <a href="/outline/" style="font-family: 微软雅黑"><i>More Blogs... </i></a>
+     </div>
+   </div>
+
+ </div>
+</div>

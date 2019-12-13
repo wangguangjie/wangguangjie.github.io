@@ -1,0 +1,296 @@
+
+<!DOCTYPE HTML>
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <title>Handler内存泄露分析</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191213173626" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
+    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?917e6ab8343819d1aec112fcdf12ad47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+  </head>
+
+  <body 
+    >
+      <header>
+
+        <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
+
+        <ul class="navigation">
+          <li><a href="/life/"  title="Photography">Photography</a></li>
+          <li><a href="/outline/" title="Blogs">Blogs</a></li>
+          <li><a href="/HIT/"  title="Research">Research</a></li>
+          <li><a href="/about/" title="About">About</a></li>  
+        </ul>
+      </header>
+
+      <div class="content" style="border-radius: 25px">
+  <div class="post single">
+
+    
+    <h1 style="font-family: 微软雅黑"><b> Handler内存泄露分析 </b></h1>
+
+    <info datetime="2018-03-13" style="font-family: Chalkduster">
+      Mar 13, 2018
+    </info>
+
+    
+
+    <div class="body">
+        <blockquote>
+  <p>每次在创建handler内部类对象时(常见的匿名内部类），编译器都是提醒会发生内存泄露。对于编写健壮可靠的代码来说，像此类提示肯定有它的道理，
+不能够简单忽视。首先简单分析为什么会存在内存泄露问题，其次对存在的问题进行更正，同时简单介绍下Handler、Message、Looper、MessageQueue的
+原理与相互关系。</p>
+</blockquote>
+
+<p><a href="http://ovy9gem9a.bkt.clouddn.com/res/post/Handler%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/show.png"><img src="http://ovy9gem9a.bkt.clouddn.com/res/post/Handler%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/show.png" class="sort-classifies" width="638" align="center" />
+</a></p>
+<h4 id="内存泄露的原因">内存泄露的原因</h4>
+
+<blockquote>
+  <p>其实为什么会存在内存泄露，编译器已经给出很明确的解释了（但要求你理解Handler、Message、Messagequeue、Looper之间的相互关系），并且编译器也
+给出了详细的做法。那针对编译器给出的解释我们来进一步分析。</p>
+</blockquote>
+
+<p>当定义一个不是静态内部类的时候(一般内部类)，此类是属于对象的，此内部类对象是与外部对象是关联的，也就是说此时的内部类有外部对象的引用。使用handler发送
+的message拥有handler对象的引用(虽然可以设置message的引用，现在暂时不考虑),当message处于Loop中的messagequeue时，GC就无法对handler外部的象进行
+垃圾回收，并且Looper的生命周期和Activity的生命周期是不一样的，Looper是在整个程序的运行周期中，而Activity却不一定，很多时候比整个程序的运行周
+期短，所以当程序正在运行时候，Activity需要回收时却得不到回收。</p>
+
+<h4 id="解决方法">解决方法</h4>
+<blockquote>
+  <p>解决方法编译器提示已经说得很清楚了，一种是使用静态内部类，因为静态内部类默认不拥有外部对象的引用，另外一种是使用外部类，这两种方式都需要创建外部对象的
+弱引用，通过弱引用来访问外部对象。另外还需要注意的是，当外部Activity被回收时，此时如果不做处理，handler还是能接受到发送给activity的消息，此时需要
+在onDestroy()中移除回调，也就是说移除消除handler所关联的MessageQueue中此handler所发送的消息，此时activity才可被安全回收。</p>
+</blockquote>
+
+<p>1 内部静态类的方式</p>
+
+<pre><code>public class TestActivity extends Activity{
+
+    public TextView mTextView;
+
+	@Overide
+	public void onCreate(Bundle onSaveInstanceState){
+		super.onCreate(onSaveInstanceState);
+		setContentVIew(R.layout.main_layout);
+		mTextView=findViewById(R.id.text_view);
+		myHandler.sendMessage(new Message);
+	}
+
+	Handler myHandler=new MyHandler;
+	class Myhandler extends Handler{
+		private WeakReference&lt;Activity&gt; mActivityRef;
+		public Handler(Activity activity){
+			mActivityRef=new WeakReference&lt;Activity&gt;(activity);
+		}
+		@Overide
+		public void handleMessage(Message msg){
+			//mActivityRef.get().mTextView.setText("");
+			mActivity.get().handle(msg);
+		}
+	}
+
+    //为了避免大量使用get()方法，个人感觉可以把处理放在Activity中,
+    //也就是让外部Activity根据消息来进行具体的处理解析;
+	private void handle(Message msg){
+
+	}
+
+	@Overide
+	public void onDestroy(){
+		super.onDestroy;
+		myHandler.removeCallbacks(null);
+	}
+}
+
+
+</code></pre>
+
+<p>2 外部类</p>
+
+<pre><code>public class TestActivity extends Activity{
+
+    public TextView mTextView;
+
+	@Overide
+	public void onCreate(Bundle onSaveInstanceState){
+		super.onCreate(onSaveInstanceState);
+		setContentVIew(R.layout.main_layout);
+		mTextView=findViewById(R.id.text_view);
+		myHandler.sendMessage(new Message);
+	}
+	Handler myHandler=new MyHandler;
+
+    //封装消息处理;
+	public void handle(Message msg){
+
+	}
+}
+class Myhandler extends Handler{ 
+
+	private WeakReference&lt;Activity&gt; mActivityRef;
+
+	public Handler(Activity activity){
+		mActivityRef=new WeakReference&lt;Activity&gt;(activity);
+	}		
+
+	@Overide
+	public void handleMessage(Message msg){
+    	mActivityRef.get().handle;
+	}
+}
+
+</code></pre>
+
+<blockquote>
+  <p>由于时间关系，下篇再分析Handler、Looper及MessageQueue</p>
+</blockquote>
+
+<p>下面是我的个人连接，有兴趣的的可以关注我</p>
+<blockquote>
+  <ul>
+    <li><a href="http://blog.csdn.net/wgj13718925364">CSDN</a></li>
+    <li><a href="http://www.cnblogs.com/wangguangjie/">博客园</a></li>
+    <li><a href="https://www.office.com/1/?auth=2&amp;home=1&amp;from=ShellLogo">office365:xm649@silently.party</a></li>
+    <li><a href="https://github.com/wangguangjie">github</a></li>
+    <li><a href="">QQ</a>
+ <img src="http://ovy9gem9a.bkt.clouddn.com/HIT/QQ.png" class="qq-picture" width="138" align="center" /></li>
+    <li><a href="">微信</a>
+  <img src="http://ovy9gem9a.bkt.clouddn.com/HIT/weixin.png" class="weixin-picture" width="138" align="center" />
+———————-</li>
+  </ul>
+</blockquote>
+
+
+    </div>
+    
+    <div class="breaker"></div>
+
+  </div>
+
+  <div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            owner: 'wangguangjie',
+            repo: 'blog-comments',
+            oauth: {
+                client_id: 'ebe1283d5d5e3d3c951a',
+                client_secret: 'c7c59ad87c450562e1cc3a1b43c2e8255890b5bf',
+            },
+        })
+        gitment.render('container')
+        </script>
+    </div>
+</div>
+                     
+
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+
+
+      
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+
+
+      <footer>
+        <p style="font-family: Chalkduster,Lucida Handwriting;
+       font-style: italic;">
+        This is the blog of wangguangjie</a>
+        </p>
+      </footer>
+  </body>
+</html>

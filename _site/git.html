@@ -1,0 +1,325 @@
+
+<!DOCTYPE HTML>
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <title>Git 总结</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191213173626" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
+    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?917e6ab8343819d1aec112fcdf12ad47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+  </head>
+
+  <body 
+    >
+      <header>
+
+        <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
+
+        <ul class="navigation">
+          <li><a href="/life/"  title="Photography">Photography</a></li>
+          <li><a href="/outline/" title="Blogs">Blogs</a></li>
+          <li><a href="/HIT/"  title="Research">Research</a></li>
+          <li><a href="/about/" title="About">About</a></li>  
+        </ul>
+      </header>
+
+      <div class="content" style="border-radius: 25px">
+  <div class="post single">
+
+    
+    <h1 style="font-family: 微软雅黑"><b> Git 总结 </b></h1>
+
+    <info datetime="2018-02-05" style="font-family: Chalkduster">
+      Feb  5, 2018
+    </info>
+
+    
+
+    <div class="body">
+        <blockquote>
+  <p>   Git之前曾了解过一点，但是都没有真正使用过，作为计算机领域的技术人员，这种好用的东西怎么能够不学习呢？经过最近一段时间的学习，也算是入门了吧，能够知道什么是Git，它有什么用，能够使用git命令完成一些任务。简单来说，Git就是个工具而已，不是什么高深的技术，但是只有用得多之后，在实践中才能得心应手，真正帮助我事半功倍的完成任务。</p>
+</blockquote>
+
+<h3 id="git-简介">Git 简介</h3>
+
+<blockquote>
+  <p>  很多人都知道，Linus在1991年创建了开源的Linux，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。
+Linus虽然创建了Linux，但Linux的壮大是靠全世界热心的志愿者参与的，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？
+事实是，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！
+你也许会想，为什么Linus不把Linux代码放到版本控制系统里呢？不是有CVS、SVN这些免费的版本控制系统吗？因为Linus坚定地反对CVS和SVN，这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。有一些商用的版本控制系统，虽然比CVS、SVN好用，但那是付费的，和Linux的开源精神不符。
+不过，到了2002年，Linux系统已经发展了十年了，代码库之大让Linus很难继续通过手工方式管理了，社区的弟兄们也对这种方式表达了强烈不满，于是Linus选择了一个商业的版本控制系统BitKeeper，BitKeeper的东家BitMover公司出于人道主义精神，授权Linux社区免费使用这个版本控制系统。
+安定团结的大好局面在2005年就被打破了，原因是Linux社区牛人聚集，不免沾染了一些梁山好汉的江湖习气。开发Samba的Andrew试图破解BitKeeper的协议（这么干的其实也不只他一个），被BitMover公司发现了（监控工作做得不错！），于是BitMover公司怒了，要收回Linux社区的免费使用权。
+Linus可以向BitMover公司道个歉，保证以后严格管教弟兄们，嗯，这是不可能的。实际情况是这样的：
+Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的源码已经由Git管理了！牛是怎么定义的呢？大家可以体会一下。
+Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。
+历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137402760310626208b4f695940a49e5348b689d095fc000">(from liao)</a></p>
+</blockquote>
+
+<h3 id="集中式和分布式版本控制系统">集中式和分布式版本控制系统</h3>
+<blockquote>
+  <p>  <strong>集中式版本控制系统</strong>，版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。
+<strong>分布式版本控制系统</strong>根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+</blockquote>
+
+<h3 id="git的安装">Git的安装</h3>
+<blockquote>
+  <p>  安装的话不多说，在linux很多版本都内置了，如果没有的话安装也很简单，在这里不废话了.</p>
+</blockquote>
+
+<h3 id="git的基本用法">Git的基本用法</h3>
+<ul>
+  <li>创建仓库上传到远程仓库（版本库）</li>
+</ul>
+
+<p>1.新建文件夹</p>
+
+<pre><code>$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+</code></pre>
+
+<p>2.初始化仓库</p>
+
+<pre><code>$ git init
+</code></pre>
+
+<p>3.添加文件并建立远程连接</p>
+
+<pre><code>$ git add .
+$ git commit -m "commit description"
+$ git remote add origin https://wangguangjie/wangguangjie.github.io/项目名称 //与远程仓库建立连接
+</code></pre>
+
+<p>4.push</p>
+
+<pre><code>$ git push origin master  //此时分支push到远程master
+$ gut push origin branch:master //本地分支branch push到远程master分支
+</code></pre>
+
+<p>除了这种在本地建立仓库的方式之外，还可以clone远程仓库到本地，在实际中这种方式应用更多，比如你fork了别人的仓库，此时你就需要clone到本地，又或者你在远程自己建立了仓库，也需要clone到本地，更新之后再上传到远程仓库。</p>
+<pre><code>git clone "https://wangguangjie/wanguangjie.github.io/项目名称"
+</code></pre>
+
+<ul>
+  <li>Git-常见命令</li>
+</ul>
+
+<p>1.查看状态</p>
+<pre><code>$ git status
+</code></pre>
+<p>2.查看上次的修改</p>
+<pre><code>$ git diff
+</code></pre>
+<p>3.版本回退</p>
+<pre><code>$ git log //查看最近的提交
+$ git log --pretty=online //查看最近提交简化版
+$ git reset --hard reset HEAD^ //回到倒数第二次提交
+$ git reset --hard *版本号*      //回到指定的提交点
+$ git reflog //记录命令日志
+</code></pre>
+
+<p>4.分支</p>
+<pre><code>$ git branch  //查看本地分支
+$ git branch -a //查看全部分支
+$ git branch test //新建分支test
+$ git checkout test //切换到分支test
+$ gut branch -d test //删除分支
+$ git checkout -b test //新建分支test并切换到分支
+
+$ git push origin :reomte_branch //删除远程分支
+</code></pre>
+
+<p>5 checkout</p>
+<pre><code>$ git checkout --read.text 把read.text文件在工作区的修改撤销
+</code></pre>
+
+<p>6 版本回退</p>
+<pre><code>$ git log
+$ git log --pretty=online
+$ git reset --hard HEAD^ //回退到上一个版本
+$ git reset --hard HEAD^^
+$ git reset --hard HEAD~100 //回退到前一百个版本
+$ git reflog //查看输入过的命令
+</code></pre>
+
+<p>7 分支</p>
+<pre><code>$ git fetch origin master //获取远程仓库的master分支
+$ git merge test //合并分支到当前分支
+$ git branch -d test //删除分支
+$ git checkout -b test origin/test //创建远程分支test到本地分支test
+
+</code></pre>
+
+<p>8 pull</p>
+<pre><code>$ git pull origin master //远程分支master与当前分支合并
+$ git pull origin master:branch //远程分支maser与本地branch分支合并
+// 上面一条命令等价于下面两条命令
+$ git fetch origin master   //获取远程master分支
+// $ git log -p branch..origin/master  //比较branch与远程分支master的差别
+$ gut merge branch          //与本地分支branch合并
+/**
+  上面的操作可理解为：
+$ git fetch origin master:tmp
+$ git diff tmp 
+$ git merge tmp
+**/
+</code></pre>
+
+<p>9 手动建立追踪关系</p>
+<pre><code>$ git branch --set-upstream master origin/branch //master追踪远程branch
+$ gut branch origin //如果当前分支与远程分支有追踪关系，可省略远程分支名
+</code></pre>
+
+<blockquote>
+  <p><a href="https://git-scm.com/">git官网</a> <a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">官网文档</a></p>
+</blockquote>
+
+<p>下面是我的个人连接，有兴趣的的可以关注我</p>
+<blockquote>
+  <ul>
+    <li><a href="http://blog.csdn.net/wgj13718925364">CSDN</a></li>
+    <li><a href="http://www.cnblogs.com/wangguangjie/">博客园</a></li>
+    <li><a href="https://www.office.com/1/?auth=2&amp;home=1&amp;from=ShellLogo">office365:xm649@silently.party</a></li>
+    <li><a href="https://github.com/wangguangjie">github</a></li>
+    <li><a href="">QQ</a>
+ <img src="http://ovy9gem9a.bkt.clouddn.com/HIT/QQ.png" class="qq-picture" width="138" align="center" /></li>
+    <li><a href="">微信</a>
+  <img src="http://ovy9gem9a.bkt.clouddn.com/HIT/weixin.png" class="weixin-picture" width="138" align="center" />
+———————-</li>
+  </ul>
+</blockquote>
+
+
+    </div>
+    
+    <div class="breaker"></div>
+
+  </div>
+
+  <div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            owner: 'wangguangjie',
+            repo: 'blog-comments',
+            oauth: {
+                client_id: 'ebe1283d5d5e3d3c951a',
+                client_secret: 'c7c59ad87c450562e1cc3a1b43c2e8255890b5bf',
+            },
+        })
+        gitment.render('container')
+        </script>
+    </div>
+</div>
+                     
+
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+
+
+      
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+
+
+      <footer>
+        <p style="font-family: Chalkduster,Lucida Handwriting;
+       font-style: italic;">
+        This is the blog of wangguangjie</a>
+        </p>
+      </footer>
+  </body>
+</html>
