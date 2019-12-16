@@ -12,7 +12,14 @@ title: About
  - [百度网盘](https://pan.baidu.com/disk/home#/all?path=%2F&vmode=list?){:target="_blank"}
  -  [阿里云](https://dc.console.aliyun.com/next/index?spm=5176.12818093.my.ddomain.488716d06WVBPq#/domain/list/all-domain){:target="_blank"}
 
-> 
+
+## <a style="font-family: 微软雅黑"><b> LaTeX </b></a>
+- [LaTex Templates](){:target="_blank"}
+
+
+## <a style="font-family: 微软雅黑"><b> AI算法 </b></a>
+> [吴恩达深度学习课程-网易](https://mooc.study.163.com/university/deeplearning_ai#/c){:target="_blank"}
+
 
 #### <a style="font-family: 微软雅黑"><b> 其他信息 </b></a>
 > - [CSDN](http://blog.csdn.net/wgj13718925364){:target="_blank"}
