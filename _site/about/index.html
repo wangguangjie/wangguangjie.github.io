@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191216144439" type="text/css">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191216170632" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
     
     <script>
@@ -55,10 +55,21 @@
   <li><a href="" target="_blank">LaTex Templates</a></li>
 </ul>
 
-<h2 id="-ai算法-"><a style="font-family: 微软雅黑"><b> AI算法 </b></a></h2>
-<blockquote>
-  <p><a href="https://mooc.study.163.com/university/deeplearning_ai#/c" target="_blank">吴恩达深度学习课程-网易</a></p>
-</blockquote>
+<h2 id="-深度学习"><a style="font-family: 微软雅黑"><b> 深度学习</b></a></h2>
+<ul>
+  <li><a href="http://www.tensorinfinity.com/paper_158.html" target="_blank">深度学习导图</a></li>
+  <li><a href="https://github.com/dformoso/deeplearning-mindmap" target="_blank">深度学习思维导图</a></li>
+  <li><a href="https://mooc.study.163.com/university/deeplearning_ai#/c" target="_blank">吴恩达深度学习课程-网易</a></li>
+  <li><a href="https://kivy-cn.github.io/Stanford-CS-229-CN/#/" target="_blank">吴恩达课程中文笔记</a></li>
+  <li><a href="http://www.ai-start.com/dl2017/" target="_blank">吴恩达学习笔记</a></li>
+  <li><a href="https://github.com/dformoso/deeplearning-mindmap" target="_blank">深度学习思维导图</a></li>
+  <li><a href="https://deeplearning.mit.edu/" target="_blank">MIT深度学习基础</a></li>
+</ul>
+
+<h2 id="-计算机视觉"><a style="font-family: 微软雅黑"><b> 计算机视觉</b></a></h2>
+<ul>
+  <li><a href="https://mp.weixin.qq.com/s/WNkzfvYtEO5zJoe_-yAPow" target="_blank">计算机视觉研究方向</a></li>
+</ul>
 
 <h4 id="-其他信息-"><a style="font-family: 微软雅黑"><b> 其他信息 </b></a></h4>
 <blockquote>
@@ -81,90 +92,6 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-<!-- During authoring, this automatically reloads the post as its changing -->
-<script type="text/javascript">
-(function() {
-var qs = document.location.search;
-var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
-if (current_etag !== null) { current_etag = current_etag[1]; }
-var scrolly = qs.match(/scrolly=([0-9]+)/);
-if (scrolly) {
-  scrolly = parseInt(scrolly[1]);
-  window.scrollTo(window.scrollX, scrolly);
-  setTimeout(function () {
-    window.scrollTo(window.scrollX, scrolly);
-  }, 10);
-}
-
-function check() {
-  var r = new XMLHttpRequest();
-  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
-  r.open('GET', url, true);
-  r.onreadystatechange = function() {
-    if (r.readyState == 4){
-      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
-      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
-      if (current_etag === null) {
-        current_etag = found_etag;
-      } else if (found_etag !== current_etag) {
-        document.location.search =
-          '?etag=' + encodeURIComponent(found_etag) +
-          '&scrolly=' + window.scrollY;
-        return;
-      }
-      setTimeout(check, 500);
-    }
-  };
-  r.send(null);
-}
-check();
-})();
-</script>
-
-
-
-      
-<!-- During authoring, this automatically reloads the post as its changing -->
-<script type="text/javascript">
-(function() {
-var qs = document.location.search;
-var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
-if (current_etag !== null) { current_etag = current_etag[1]; }
-var scrolly = qs.match(/scrolly=([0-9]+)/);
-if (scrolly) {
-  scrolly = parseInt(scrolly[1]);
-  window.scrollTo(window.scrollX, scrolly);
-  setTimeout(function () {
-    window.scrollTo(window.scrollX, scrolly);
-  }, 10);
-}
-
-function check() {
-  var r = new XMLHttpRequest();
-  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
-  r.open('GET', url, true);
-  r.onreadystatechange = function() {
-    if (r.readyState == 4){
-      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
-      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
-      if (current_etag === null) {
-        current_etag = found_etag;
-      } else if (found_etag !== current_etag) {
-        document.location.search =
-          '?etag=' + encodeURIComponent(found_etag) +
-          '&scrolly=' + window.scrollY;
-        return;
-      }
-      setTimeout(check, 500);
-    }
-  };
-  r.send(null);
-}
-check();
-})();
-</script>
-
-
       <footer>
         <p style="font-family: Chalkduster,Lucida Handwriting;
        font-style: italic;">
@@ -173,3 +100,45 @@ check();
       </footer>
   </body>
 </html>
+
+
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+

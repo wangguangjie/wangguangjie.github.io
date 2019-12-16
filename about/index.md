@@ -17,9 +17,18 @@ title: About
 - [LaTex Templates](){:target="_blank"}
 
 
-## <a style="font-family: 微软雅黑"><b> AI算法 </b></a>
-> [吴恩达深度学习课程-网易](https://mooc.study.163.com/university/deeplearning_ai#/c){:target="_blank"}
+## <a style="font-family: 微软雅黑"><b> 深度学习</b></a>
+- [深度学习导图](http://www.tensorinfinity.com/paper_158.html){:target="_blank"}
+- [深度学习思维导图](https://github.com/dformoso/deeplearning-mindmap){:target="_blank"}
+- [吴恩达深度学习课程-网易](https://mooc.study.163.com/university/deeplearning_ai#/c){:target="_blank"}
+- [吴恩达课程中文笔记](https://kivy-cn.github.io/Stanford-CS-229-CN/#/){:target="_blank"}
+- [吴恩达学习笔记](http://www.ai-start.com/dl2017/){:target="_blank"}
+- [深度学习思维导图](https://github.com/dformoso/deeplearning-mindmap){:target="_blank"}
+- [MIT深度学习基础](https://deeplearning.mit.edu/){:target="_blank"}
 
+
+## <a style="font-family: 微软雅黑"><b> 计算机视觉</b></a>
+- [计算机视觉研究方向](https://mp.weixin.qq.com/s/WNkzfvYtEO5zJoe_-yAPow){:target="_blank"}
 
 #### <a style="font-family: 微软雅黑"><b> 其他信息 </b></a>
 > - [CSDN](http://blog.csdn.net/wgj13718925364){:target="_blank"}
