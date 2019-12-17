@@ -7,7 +7,7 @@ layout: default
   <div class="post single">
 
     {% unless page.title_hidden %}
-    <h1 style="font-family: 微软雅黑"><b> {{ page.title }} </b></h1>
+    <h1 style="font-family: American Typewriter"><b> {{ page.title }} </b></h1>
 
     <info datetime="{{ page.date | date: "%Y-%m-%d" }}" style="font-family: Chalkduster">
       {{ page.date | date: "%b %e, %Y" }}
@@ -15,7 +15,7 @@ layout: default
 
     {% endunless %}
 
-    <div class="body">
+    <div class="body"  style="font-family: American Typewriter">
         {% if page.external_url %}文章发布在 {{ page.external_url }}
         <script>
          document.location.href = "{{ page.external_url }}";

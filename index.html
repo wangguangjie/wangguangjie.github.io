@@ -161,11 +161,11 @@ layout: default
    <!-- section 1.最近更新 -->
    <a class="update" style="font-family: Chalkduster">
     <h3 class="text" >Update</h3> 
-    <ul class="items" style="font-family: Times New Roman ;font-size: 14px">
+    <ul class="items" style="font-family: American Typewriter;font-size: 14px">
       {% for post in site.posts limit:5 %}
       <li class="item1" style="color:#BFEFFF" >
-        <a href="{{ post.url }}"><u><b><i>
-         {{ post.date | date:"%b %Y" }} - 更新了{{ post.title }} </b></u></i>
+        <a href="{{ post.url }}"><u><i>
+         {{ post.date | date:"%b %Y" }} - 更新了{{ post.title }} </u></i>
         </a>
       </li>
      {% endfor %}
@@ -193,8 +193,8 @@ layout: default
          <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
        <!-- 常规博客 -->
        {% else %}
-         <h3 class="text" style="font-family: 微软雅黑"><b> {{ post.title }} </b></h3>
-         <div class="body" style="font-family: 微软雅黑">
+         <h3 class="text" style="font-family: American Typewriter"><b> {{ post.title }} </b></h3>
+         <div class="body" style="font-family: American Typewriter">
             <p >
              {% if post.description %}
               {{ post.description | markdownify | strip_html }}
