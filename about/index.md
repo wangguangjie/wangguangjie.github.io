@@ -29,6 +29,7 @@ title: About
 - [吴恩达学习笔记](http://www.ai-start.com/dl2017/){:target="_blank"}
 - [MIT深度学习基础](https://deeplearning.mit.edu/){:target="_blank"}
 - [《Tensorflow实战Google深度学习框架》 郑泽宇 顾思宇](https://github.com/Mikoto10032/DeepLearning/blob/master/books/Tensorflow%20%E5% AE%9E%E6%88%98Google%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6.pdf){:target="_blank"}
+- [深度学习书籍](https://github.com/exacity/deeplearningbook-chinese){:target="_blank"}
 
 ## <a style="font-family: American Typewriter"><b> 计算机视觉</b></a>
 - [计算机视觉研究方向](https://mp.weixin.qq.com/s/WNkzfvYtEO5zJoe_-yAPow){:target="_blank"}
