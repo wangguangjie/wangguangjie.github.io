@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191223163248" type="text/css">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20191225112424" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
     
     <script>
@@ -57,7 +57,7 @@
 </blockquote>
 
 <h3 id="环境配置">环境配置</h3>
-<h5 id="1java">1.Java</h5>
+<h5 id="11-java">1.1 Java</h5>
 <ul>
   <li>新建maven项目</li>
   <li>pom.xml添加依赖：
@@ -72,7 +72,7 @@
   </li>
 </ul>
 
-<h5 id="2python">2.Python</h5>
+<h5 id="22-python">2.2 Python</h5>
 <ul>
   <li>pip3 install pyhanlp
     <blockquote>
@@ -86,7 +86,7 @@
   </li>
 </ul>
 
-<h5 id="3下载github源码">3.下载github源码</h5>
+<h5 id="23-下载github源码">2.3 下载github源码</h5>
 <ul>
   <li>git clone git@github.com:wangguangjie/HanLP.git
     <blockquote>
@@ -100,7 +100,7 @@
   <p>中文分词是将一段文本分为一系列单词的过程，大致分为<strong>基于词典规则</strong>和<strong>基于机器学习</strong>两大派别。词典分词是最简单、最常用的分词算法，仅需要一部词典和一套查词典的规则即可。</p>
 </blockquote>
 
-<h5 id="1什么是词">1.什么是词</h5>
+<h5 id="21-什么是词">2.1 什么是词</h5>
 <ul>
   <li>在语言学上，词的定义是具备独立意义的最小单位。</li>
   <li>在基于词典的中文分词中，词的定义是：词典中的字符串就是词。(基于此定义那词典之外的词就不是词了，这也不符合实际，其实这也就是词典分词的弱点。事实上，词典是无法完整记录无穷的词汇，语言时时刻刻在变化，任何词典都只是某个时间节点拍摄的一张快照)</li>
@@ -111,7 +111,7 @@
   </li>
 </ul>
 
-<h5 id="2词典">2.词典</h5>
+<h5 id="22-词典">2.2 词典</h5>
 <ul>
   <li>HanLP词典
     <blockquote>
@@ -123,7 +123,7 @@
   </li>
 </ul>
 
-<h5 id="3切分算法">3.切分算法</h5>
+<h5 id="23-切分算法">2.3 切分算法</h5>
 <blockquote>
   <p>常用规则：正向最长匹配、逆向最长匹配和双向最长匹配</p>
 </blockquote>
@@ -135,15 +135,67 @@
   <li>双向最长</li>
 </ul>
 
-<h5 id="4字典树">4.字典树</h5>
+<h5 id="24-字典树">2.4 字典树</h5>
 
-<h5 id="5hanlp的词典分词实现">5.HanLP的词典分词实现</h5>
+<h5 id="25-hanlp的词典分词实现">2.5 HanLP的词典分词实现</h5>
 
-<h5 id="6准确率评估">6.准确率评估</h5>
+<h5 id="26-准确率评估">2.6 准确率评估</h5>
 
 <h3 id="二元语法与中文分词">二元语法与中文分词</h3>
 
+<h5 id="31-语言模型">3.1 语言模型</h5>
+<ul>
+  <li>数据稀疏</li>
+  <li>计算代价大</li>
+</ul>
+
+<h5 id="32-中文分词语料库">3.2 中文分词语料库</h5>
+
+<h5 id="33-训练">3.3 训练</h5>
+<ul>
+  <li>加载语料库</li>
+  <li>统计一元语法</li>
+  <li>统计二元语法</li>
+</ul>
+
+<h5 id="34-预测">3.4 预测</h5>
+<ul>
+  <li>加载模型</li>
+  <li>构建词网</li>
+  <li>节点间的距离计算</li>
+  <li>词图上的维特比算法</li>
+  <li>与用户词典的集成</li>
+</ul>
+
+<h5 id="35-评测">3.5 评测</h5>
+
 <h3 id="隐马尔科夫模型与序列标注">隐马尔科夫模型与序列标注</h3>
+
+<h5 id="41-序列标注问题">4.1 序列标注问题</h5>
+<ul>
+  <li>序列标注与中文分词</li>
+  <li>序列标注与词性标注</li>
+  <li>序列标注与命名实体识别</li>
+</ul>
+
+<h5 id="42-隐玛尔可夫模型">4.2 隐玛尔可夫模型</h5>
+<ul>
+  <li>从玛尔可夫假设到隐玛尔可夫模型</li>
+  <li>初始状态概率向量</li>
+  <li>状态转移矩阵</li>
+  <li>发射概率矩阵</li>
+  <li>隐玛尔可夫模型的三个基本用法</li>
+</ul>
+
+<h5 id="43-隐玛尔可夫模型的样本生成">4.3 隐玛尔可夫模型的样本生成</h5>
+
+<h5 id="44-隐玛尔可夫模型的训练">4.4 隐玛尔可夫模型的训练</h5>
+
+<h5 id="45-隐玛尔可夫模型的预测">4.5 隐玛尔可夫模型的预测</h5>
+
+<h5 id="46-隐玛尔可夫模型应用于中文分词">4.6 隐玛尔可夫模型应用于中文分词</h5>
+
+<h5 id="47-二阶隐玛尔可夫模型">4.7 二阶隐玛尔可夫模型</h5>
 
 <h3 id="感知机分类与序列标注">感知机分类与序列标注</h3>
 
