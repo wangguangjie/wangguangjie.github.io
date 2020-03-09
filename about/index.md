@@ -12,6 +12,16 @@ title: About
  -  [阿里云](https://dc.console.aliyun.com/next/index?spm=5176.12818093.my.ddomain.488716d06WVBPq#/domain/list/all-domain){:target="_blank"}
 
 
+## <a style="font-family: American Typewriter"><b> AI比赛 </b></a>
+- [LaTex Templates](){:style="font-family: American Typewriter" target="_blank"}
+- [ImageNet]
+- [Kaggle]
+- [阿里天池]
+- [AI Challenger]
+- [HeyWhale]
+
+
+
 ## <a style="font-family: American Typewriter"><b> LaTeX </b></a>
 - [LaTex Templates](http://www.latextemplates.com/){:style="font-family: American Typewriter" target="_blank"}
 
