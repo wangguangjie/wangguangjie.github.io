@@ -13,8 +13,7 @@ title: About
 
 
 ## <a style="font-family: American Typewriter"><b> AI比赛 </b></a>
-- [LaTex Templates](){:style="font-family: American Typewriter" target="_blank"}
-- [ImageNet]
+- [ImageNet](){:stye = "font-family: American Typewriter" target= "_blank"}
 - [Kaggle]
 - [阿里天池]
 - [AI Challenger]
