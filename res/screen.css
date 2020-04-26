@@ -4,7 +4,7 @@
 
 * { margin:0; padding:0; font-family:inherit; }
 body {
-  background: #FFFFFF;  
+  background: #000000;  
   color: #222;
   font-family:Inconsolata, Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size:15px;
@@ -143,7 +143,7 @@ header * {
     flex-direction: column;
     justify-content: center;
   }
-  header ul li:first-child { margin-left: 0; }
+  header ul li:first-child { margin-left: 2em; }
   header ul li a[href] {
     /*background: rgba(255,60,90,0.3);*/
     cursor: pointer;
@@ -163,8 +163,7 @@ header * {
   }
 
 /* main */
-#main { margin-bottom: 3em;
-        margin-left: 30em }
+#main { margin-bottom: 3em; }
 
 /* ------------------------------------------------------------------------------------------- */
 /* main content */
