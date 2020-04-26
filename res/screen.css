@@ -6,7 +6,7 @@
 body {
   background: #333333;  
   color: #222;
-  font-family:Inconsolata, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   font-size:15px;
   line-height:1.9;
 
@@ -66,7 +66,8 @@ a[href] {
 }
 
 a[href]:hover {
-  color: #EE00EE;
+  color: #EEAD0E; 
+
 }
 
 
@@ -170,7 +171,7 @@ header * {
 div.content {
   background:white;
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 10px

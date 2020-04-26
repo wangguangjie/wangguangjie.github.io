@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426171250" type="text/css">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426220345" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
     
     <script>
@@ -44,7 +44,7 @@
           }
       </style>
       <!-- 搜索功能 -->
-      <div id="search-container" style="float:right;position: fixed;right:10px; top:90px; z-index:999999;background:#333333;padding:5px 5px 5px 5px;">
+      <div id="search-container" style="float:right;height:35px;position: fixed;right:10px; top:90px; z-index:999999;background:#333333;padding:0px 0px 0px 0px;">
         <input type="text" id="search-input" placeholder="Type To Search" style="border:0px solid;height:35px;width:185px;border-radius:20px;padding-left:10px !important;font-family: 'Lora', 'Times New Roman', serif;font-size: 8px" >
         <ul id="results-container" style="max-width:300px;"></ul>
 
@@ -213,24 +213,24 @@
 
  /** Section1最近更新列表颜色 */
  ul.items a{
-    color: #BFEFFF;
+    color: #000;
  }
 
   /* 去除下划线 */
   a[href] {
     text-decoration: none;
-    color: #BFEFFF;
+    color: #000;
   }
 </style>
 
 
 <!-- 首页博客正文 -->
-<div class="content" style="border-radius: 15px;font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;">
+<div class="content" style="border-radius: 15px">
   <div class="posts">
    <!-- section 1.最近更新 -->
    <a class="update" >
-    <h3 class="text" style="font-family: 'Lora', 'Times New Roman', serif;"><i>Update</i></h3> 
-    <ul class="items" font-size: 14px">
+    <h3 class="text" ><i>Update</i></h3> 
+    <ul class="items" style="font-size: 12px;display: inline;">
       
       <li class="item1" style="color:#BFEFFF" >
         <a href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AD%A6%E4%B9%A0"><u><i>
@@ -267,6 +267,7 @@
 
    <!-- section2 博客列表 -->
    
+   <hr></hr>
    <a href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AD%A6%E4%B9%A0"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -294,8 +295,8 @@
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -322,8 +323,8 @@
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%9B%BE"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -350,8 +351,8 @@
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -378,8 +379,8 @@
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/AI%E5%AD%A6%E4%B9%A0"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -407,8 +408,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/ThreadLocal%E7%94%A8%E6%B3%95%E5%8F%8A%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -437,8 +438,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/Handler%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -468,8 +469,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/java%E5%AE%9E%E7%8E%B0%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -497,8 +498,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/Android-%E4%B9%8B%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -526,8 +527,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/Android-n$d-n$s"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -555,8 +556,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/git"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -584,8 +585,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/blog"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -613,8 +614,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/android"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -642,8 +643,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/git"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -671,8 +672,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/design_model"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -701,8 +702,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/MAC_file"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -730,8 +731,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/synchronized"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -762,8 +763,8 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
+   <hr></hr>
    <a href="/MVC"
      class="post-excerpt">
        <!-- 判断是否有图片博客-->
@@ -789,7 +790,6 @@ http://www.baidu.com
        <!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    
    
    <!-- Section3 查看更多博客-->
@@ -802,13 +802,31 @@ http://www.baidu.com
  </div>
 </div>
 
+ 
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="font-family: 'Lora', 'Times New Roman', serif">
+                <p class="copyright text-muted">
+                    Copyright  2020
+                    <br>
+                    Powered by <a style="color:#000000" href="https://wangguangjie.github.io">Guangjie blog</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=wangguangjie&repo=wangguangjie.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-      <footer>
-        <p style="font-family: 'Lora', 'Times New Roman', serif;;
-       font-style: italic;">
-        This is the blog of wangguangjie</a>
-        </p>
-      </footer>
+
+
+
+
    </section>
   </body>
 </html>

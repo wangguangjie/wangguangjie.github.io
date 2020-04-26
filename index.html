@@ -149,24 +149,24 @@ layout: default
 
  /** Section1最近更新列表颜色 */
  ul.items a{
-    color: #BFEFFF;
+    color: #000;
  }
 
   /* 去除下划线 */
   a[href] {
     text-decoration: none;
-    color: #BFEFFF;
+    color: #000;
   }
 </style>
 
 
 <!-- 首页博客正文 -->
-<div class="content" style="border-radius: 15px;font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;">
+<div class="content" style="border-radius: 15px">
   <div class="posts">
    <!-- section 1.最近更新 -->
    <a class="update" >
-    <h3 class="text" style="font-family: 'Lora', 'Times New Roman', serif;"><i>Update</i></h3> 
-    <ul class="items" font-size: 14px">
+    <h3 class="text" ><i>Update</i></h3> 
+    <ul class="items" style="font-size: 12px;display: inline;">
       {% for post in site.posts limit:5 %}
       <li class="item1" style="color:#BFEFFF" >
         <a href="{{ post.url }}"><u><i>
@@ -179,6 +179,7 @@ layout: default
 
    <!-- section2 博客列表 -->
    {% for post in site.posts limit:50 %}
+   <hr></hr>
    <a href="{{ post.url }}"
      class="post-excerpt{% if post.photo_url %} photo{% endif %}">
        <!-- 判断是否有图片博客-->
@@ -217,7 +218,6 @@ layout: default
        {% endif %}<!-- post.photo_url -->
       </div>
    </a>
-   <hr></hr>
    {% endfor %}
    
    <!-- Section3 查看更多博客-->

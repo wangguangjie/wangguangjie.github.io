@@ -14,3 +14,8 @@ kramdown:
   # transliterated_header_ids: true
   syntax_highlighter_opts:
       disable: true
+
+weibo_username:     huxpro
+zhihu_username:     huxpro
+github_username:    huxpro
+twitter_username:   huxpro
