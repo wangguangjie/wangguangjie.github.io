@@ -1,0 +1,135 @@
+
+<!DOCTYPE HTML>
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <title>AI学习</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426100705" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
+    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?917e6ab8343819d1aec112fcdf12ad47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+  </head>
+
+  <body>
+   <section style="background: linear-gradient(to left bottom, hsl(218, 100%, 85%) 0%,hsl(179, 100%, 85%) 100%)">
+        >
+      <header >
+
+        <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
+
+        <ul class="navigation">
+          <li><a href="https://wangguangjie.github.io/document/"  title="document">Document</a></li>
+          <li><a href="/outline/" title="Blogs">Blogs</a></li>
+          <li><a href="/about/" title="About">About</a></li>  
+        </ul>
+      </header>
+
+      <div class="content" style="border-radius: 25px">
+  <div class="post single">
+
+    
+    <h1 style="font-family: American Typewriter"><b> AI学习 </b></h1>
+
+    <info datetime="2019-12-12" style="font-family: Chalkduster">
+      Dec 12, 2019
+    </info>
+
+    
+
+    <div class="body"  style="font-family: American Typewriter">
+        文章发布在 https://mp.weixin.qq.com/s/YOGeFZ8_h78aCY9LEUaJ9A
+        <script>
+         document.location.href = "https://mp.weixin.qq.com/s/YOGeFZ8_h78aCY9LEUaJ9A";
+        </script>
+        
+    </div>
+    
+    <div class="breaker"></div>
+
+  </div>
+
+  <div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            owner: 'wangguangjie',
+            repo: 'blog-comments',
+            oauth: {
+                client_id: 'ebe1283d5d5e3d3c951a',
+                client_secret: 'c7c59ad87c450562e1cc3a1b43c2e8255890b5bf',
+            },
+        })
+        gitment.render('container')
+        </script>
+    </div>
+</div>
+                     
+
+      <footer>
+        <p style="font-family: American Typewriter;
+       font-style: italic;">
+        This is the blog of wangguangjie</a>
+        </p>
+      </footer>
+   </section>
+  </body>
+</html>
+
+
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+

@@ -1,0 +1,770 @@
+
+<!DOCTYPE HTML>
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <title>The blog of wangguangjie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426100705" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
+    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?917e6ab8343819d1aec112fcdf12ad47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+  </head>
+
+  <body>
+   <section style="background: linear-gradient(to left bottom, hsl(218, 100%, 85%) 0%,hsl(179, 100%, 85%) 100%)">
+        >
+      <header  class="main">
+
+        <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
+
+        <ul class="navigation">
+          <li><a href="https://wangguangjie.github.io/document/"  title="document">Document</a></li>
+          <li><a href="/outline/" title="Blogs">Blogs</a></li>
+          <li><a href="/about/" title="About">About</a></li>  
+        </ul>
+      </header>
+
+      <!-- 博客首页样式-->
+<style type="text/css">
+  /* section2 post 与section3 之间的间距 */
+  div.posts div.end {
+    padding-top:20px;
+  }
+
+  /* 标题 */
+  h3 {
+    margin:0;
+    text-shadow: 5px 5px 5px #ADD8E6;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  /* 普通博客样式设置 */
+  a[href].post-excerpt {
+    display: block;
+    color: inherit;
+    background: none;
+    text-shadow: none;
+    padding-bottom:px;
+    margin-bottom:15px;
+    padding-left: 10px;
+    padding-right: 5px;
+    /*border-bottom: 1px solid #ddd; */
+  }
+
+  a[href].post-excerpt, a[href].post-excerpt a[href] {
+    font-family: Chalkduster;
+    background: #F0FFFF;
+    text-shadow: none;
+  }
+  a[href].post-excerpt:hover {
+    color:#EEAD0E; 
+  }
+
+  a[href].post-excerpt:hover h3 {
+      color: #EEAD0E;
+    }
+
+  a[href].post-excerpt.photo {
+    height:500px;
+    position:relative;
+    background:white;
+    margin-bottom:32px;
+  }
+  
+  a[href].post-excerpt.photo h3 {
+    font-family: Chalkduster; 'Roboto Condensed', helvetica, sans-serif;
+    padding:10px 40px;
+    font-size: 200%;
+    font-weight: 400;
+    color: #FFD700;
+    /*background:rgba(255,200,0,0.1);*/
+    -webkit-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left:0; right:0; bottom:0;
+    z-index:2;
+    /*font-family:inherit;*/
+    text-transform: none;
+    /*font-weight:400;*/
+    line-height:1.1;
+      padding-bottom:1em;
+    }
+
+  a[href].post-excerpt.photo p{
+    color:#FF3E96;
+  }
+
+  a[href].post-excerpt.photo div.c {
+    padding:0;
+    background: transparent no-repeat center center scroll;
+    position: absolute;
+    left:0; top:0; right:0; bottom:0;
+  }
+
+  a[href].post-excerpt.photo div.c div.image {
+    position: absolute;
+    left:0; top:0; right:0; bottom:0;
+    z-index:1;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   }
+
+  a[href].post-excerpt.photo:hover div.c {
+    opacity: 1;
+  }
+
+  a[href].post-excerpt.photo{
+    opacity: 0.8
+  }
+
+  a[href].post-excerpt.photo:hover div.c div.image {
+     opacity:0.3;
+  }
+
+  a[href].post-excerpt:hover .body {
+    color: inherit;
+  }
+
+  .body {
+    color: #555;
+  }
+
+  h3.text {
+    font-weight:400;
+  }
+
+  .body > p:first-child {
+    margin-top:8px;
+  }
+
+  info {
+    display: inline;
+    color: #B9D3EE;
+    white-space: nowrap;
+  }
+
+  /* section3 查看更多设置*/
+  div.end {
+    text-align: right;
+    font-size: 14px;
+  }
+  div.end a:hover {
+    color: #EEAD0E;
+  }
+
+/* Section1鼠标悬停颜色 */
+ li.item1 a:hover, a.update:hover h3{
+    color: #EEAD0E;
+ }
+
+ /** Section1最近更新列表颜色 */
+ ul.items a{
+    color: #BFEFFF;
+ }
+
+  /* 去除下划线 */
+  a[href] {
+    text-decoration: none;
+    color: #BFEFFF;
+  }
+</style>
+
+
+<!-- 首页博客正文 -->
+<div class="content" style="border-radius: 15px">
+  <div class="posts">
+   <!-- section 1.最近更新 -->
+   <a class="update" style="font-family: Chalkduster">
+    <h3 class="text" >Update</h3> 
+    <ul class="items" style="font-family: American Typewriter;font-size: 14px">
+      
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AD%A6%E4%B9%A0"><u><i>
+         Dec 2019 - 更新了自然语言处理学习 </u></i>
+        </a>
+      </li>
+     
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91"><u><i>
+         Dec 2019 - 更新了计算机视觉方向 </u></i>
+        </a>
+      </li>
+     
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%9B%BE"><u><i>
+         Dec 2019 - 更新了深度学习导图 </u></i>
+        </a>
+      </li>
+     
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><u><i>
+         Dec 2019 - 更新了机器学习 </u></i>
+        </a>
+      </li>
+     
+      <li class="item1" style="color:#BFEFFF" >
+        <a href="/AI%E5%AD%A6%E4%B9%A0"><u><i>
+         Dec 2019 - 更新了AI学习 </u></i>
+        </a>
+      </li>
+     
+   </ul> 
+   </a>
+
+   <!-- section2 博客列表 -->
+   
+   <a href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AD%A6%E4%B9%A0"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> 自然语言处理学习 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  记录自然语言处理的学习，学习资料主要为何晗的自然语言处理入门书籍和工具HanLP
+
+
+
+             
+              <info datetime="">
+               <u> Dec 2019 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E6%96%B9%E5%90%91"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> 计算机视觉方向 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  所谓计算机视觉，即compute vision，就是通过用计算机来模拟人的视觉工作原理，来获取和完成一系列图像信息处理的机器。计算机视觉属于机器学习在视觉领域的应用，是一个多学科交叉的研究领域，涉及数学，物理，生物，计算机工程等多个学科，由此也可以想象到计算机视觉的研究范围非常广，也是图像，语音，自然语言处理领域中从业人数最多的。
+
+
+             
+              <info datetime="">
+               <u> Dec 2019 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%9B%BE"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> 深度学习导图 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  从感知器-logistic回归-多层感知器模型（MLP）到深度神经网络的发展过程。这是深度学习的完整历史。深度神经网络的各种类型。包括卷积神经网络CNN，循环神经网络/RNN，深度生成模型，图神经网络/GNN，深度强化学习/DRL，自动编码器/AE，随机神经网络，神经结构搜索/NAS这8个一级分支。
+
+
+             
+              <info datetime="">
+               <u> Dec 2019 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> 机器学习 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  对常用的机器学习和深度学习算法进行了总结，整理出它们之间的关系，以及每种算法的核心点，各种算法之间的比较。由此形成了一张算法地图，以帮助更好的理解和记忆这些算法
+
+
+             
+              <info datetime="">
+               <u> Dec 2019 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/AI%E5%AD%A6%E4%B9%A0"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> AI学习 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  言有三的有三AI公众号，有AI的学习的各种技术资料、文章，以及学习路径，作为AI的总览和学习的入口
+http://www.baidu.com
+
+
+             
+              <info datetime="">
+               <u> Dec 2019 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/ThreadLocal%E7%94%A8%E6%B3%95%E5%8F%8A%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> ThreadLocal用法及源码分析 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  在查看android中的handler通信机制时，看到了Looper使用了一个ThreadLocal的类成员，当时并没有深入理解ThreadLocal的用法，
+今天通过查看源码及相关的分析对ThreadLocal的用法及源码进行总结。
+
+
+
+             
+              <info datetime="">
+               <u> Mar 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/Handler%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Handler内存泄露分析 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  每次在创建handler内部类对象时(常见的匿名内部类），编译器都是提醒会发生内存泄露。对于编写健壮可靠的代码来说，像此类提示肯定有它的道理，
+不能够简单忽视。首先简单分析为什么会存在内存泄露问题，其次对存在的问题进行更正，同时简单介绍下Handler、Message、Looper、MessageQueue的
+原理与相互关系。
+
+
+
+             
+              <info datetime="">
+               <u> Mar 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/java%E5%AE%9E%E7%8E%B0%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Java实现十大经典排序算法 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  使用java实现对十大排序算法的简单总结
+
+
+
+             
+              <info datetime="">
+               <u> Mar 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/Android-%E4%B9%8B%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Android 之 下拉刷新和加载更多 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  自主开发的下拉刷新，支持下拉进行刷新和上拉获取更多。
+
+
+
+             
+              <info datetime="">
+               <u> Feb 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/Android-n$d-n$s"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Android %n$d %n$s  </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  在android字符串资源中可以使用如%n$d $n$s,用于在源码中使用字符串资源时可以替代为相应的值，现在做一个简单笔记，以便忘记时可以方便查阅
+
+
+
+             
+              <info datetime="">
+               <u> Feb 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/git"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Git 总结 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+     Git之前曾了解过一点，但是都没有真正使用过，作为计算机领域的技术人员，这种好用的东西怎么能够不学习呢？经过最近一段时间的学习，也算是入门了吧，能够知道什么是Git，它有什么用，能够使用git命令完成一些任务。简单来说，Git就是个工具而已，不是什么高深的技术，但是只有用得多之后，在实践中才能得心应手，真正帮助我事半功倍的完成任务。
+
+
+
+             
+              <info datetime="">
+               <u> Feb 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/blog"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Github主机搭建博客(jekyll) </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+      使用github提供的免费主机搭建博客已经有很久了，当初只为快速搭建自己的博客，现在有些时间对自己整个学习过程做一下总结，一是自己习惯记录与总结，理顺其中的原理与相关技术，二是希望可以为要使用这个服务的人提供小小的帮助。
+
+
+
+             
+              <info datetime="">
+               <u> Feb 2018 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/android"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Android:信息爬取 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  这个第一个在APP Store正式发布有完善功能的android程序，也算是小小的练手，用博客记录下来，在此做一个记录与总结…
+
+
+
+             
+              <info datetime="">
+               <u> Sep 2017 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/git"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Git 总结 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+     Git之前曾了解过一点，但是都没有真正使用过，作为计算机领域的技术人员，这种好用的东西怎么能够不学习呢？经过最近一段时间的学习，也算是入门了吧，能够知道什么是Git，它有什么用，能够使用git命令完成一些任务。简单来说，Git就是个工具而已，不是什么高深的技术，但是只有用得多之后，在实践中才能得心应手，真正帮助我事半功倍的完成任务。
+
+
+
+             
+              <info datetime="">
+               <u> Jun 2017 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/design_model"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> 设计模式 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 可复用面向对象软件的基础
+
+  设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理的运用设计模式可以完美的解决很多问题，每种模式在现在中都有相应的原理来与之对应，每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的核心解决方案，这也是它能被广泛应用的原因。本章系Java之美[从菜鸟到高手演变]系列之设计模式，我们会以理论与实践相结合的方式来进行本章的学习，希望广大程序爱好者，学好设计模式，做一个优秀的软件工程师！
+
+
+
+             
+              <info datetime="">
+               <u> Oct 2016 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/MAC_file"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> MAC文件目录 </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 
+  在OS X的系统中，不再有Windows用户熟悉的C盘、D盘，这是因为OS X底层是Unix系统，其目录机构符合Unix系统的规范。MAC机器主板使用了Intel主导的EFI标准，硬盘分区格式采用GPT。这种EFI+GPT的方式相比传统的BIOS＋MBR的方式有很多好处，具体可以参考我之前写的博客。
+
+
+
+             
+              <info datetime="">
+               <u> Aug 2016 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/synchronized"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> Synchronized </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; Java Synchronized 关键字
+
+  当两个并发线程访问同一个对象object中的这个synchronized(this)同步代码块时，一个时间内只能有一个线程得到执行。另一个线程必须等待当前线程执行完这个代码块以后才能执行该代码块。
+  然而，当一个线程访问object的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该object中的非synchronized(this)同步代码块。
+  尤其关键的是，当一个线程访问object的一个synchronized(this)同步代码块时，其他线程对object中所有其它synchronized(this)同步代码块的访问将被阻塞。
+
+
+
+             
+              <info datetime="">
+               <u> Jul 2016 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   <a href="/MVC"
+     class="post-excerpt">
+       <!-- 判断是否有图片博客-->
+       <div class="c">
+        <!-- 有图片博客 -->
+        
+         <h3 class="text" style="font-family: American Typewriter"><b> MVC </b></h3>
+         <div class="body" style="font-family: American Typewriter">
+            <p >
+             
+               &nbsp;&nbsp; 对mvc做一个简单的总结
+
+
+             
+              <info datetime="">
+               <u> Apr 2016 </u>
+              </info>
+           </p>
+         </div> 
+       <!-- post.photo_url -->
+      </div>
+   </a>
+   <hr></hr>
+   
+   
+   <!-- Section3 查看更多博客-->
+   <div class="breaker">
+     <div class="end">
+      <a href="/outline/" style="font-family: 微软雅黑"><i>More Blogs... </i></a>
+     </div>
+   </div>
+
+ </div>
+</div>
+
+
+      <footer>
+        <p style="font-family: American Typewriter;
+       font-style: italic;">
+        This is the blog of wangguangjie</a>
+        </p>
+      </footer>
+   </section>
+  </body>
+</html>
+
+
+<!-- During authoring, this automatically reloads the post as its changing -->
+<script type="text/javascript">
+(function() {
+var qs = document.location.search;
+var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
+if (current_etag !== null) { current_etag = current_etag[1]; }
+var scrolly = qs.match(/scrolly=([0-9]+)/);
+if (scrolly) {
+  scrolly = parseInt(scrolly[1]);
+  window.scrollTo(window.scrollX, scrolly);
+  setTimeout(function () {
+    window.scrollTo(window.scrollX, scrolly);
+  }, 10);
+}
+
+function check() {
+  var r = new XMLHttpRequest();
+  var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+  r.open('GET', url, true);
+  r.onreadystatechange = function() {
+    if (r.readyState == 4){
+      var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
+      //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
+      if (current_etag === null) {
+        current_etag = found_etag;
+      } else if (found_etag !== current_etag) {
+        document.location.search =
+          '?etag=' + encodeURIComponent(found_etag) +
+          '&scrolly=' + window.scrollY;
+        return;
+      }
+      setTimeout(check, 500);
+    }
+  };
+  r.send(null);
+}
+check();
+})();
+</script>
+
