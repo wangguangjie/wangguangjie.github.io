@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ThreadLocal用法及源码分析"
+author: Guangjie
 ---
 >在查看android中的handler通信机制时，看到了Looper使用了一个ThreadLocal的类成员，当时并没有深入理解ThreadLocal的用法，
 今天通过查看源码及相关的分析对ThreadLocal的用法及源码进行总结。

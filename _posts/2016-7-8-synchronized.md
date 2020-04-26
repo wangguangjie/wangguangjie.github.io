@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Synchronized"
+author: Guangjie
 ---
 
 ### Java Synchronized 关键字

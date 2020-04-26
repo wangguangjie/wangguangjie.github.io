@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Android %n$d %n$s "
+author: Guangjie
 ---
 
 > 在android字符串资源中可以使用如%n$d $n$s,用于在源码中使用字符串资源时可以替代为相应的值，现在做一个简单笔记，以便忘记时可以方便查阅

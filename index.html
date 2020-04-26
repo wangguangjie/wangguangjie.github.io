@@ -33,8 +33,8 @@ layout: default
   }
 
   a[href].post-excerpt, a[href].post-excerpt a[href] {
-    font-family: Chalkduster;
-    background: #F0FFFF;
+    font-family: font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    background: #FFFFFF;
     text-shadow: none;
   }
   a[href].post-excerpt:hover {
@@ -128,6 +128,11 @@ layout: default
     white-space: nowrap;
   }
 
+  p.info {
+    opacity: 0.3
+    color: #000000;
+  }
+
   /* section3 查看更多设置*/
   div.end {
     text-align: right;
@@ -156,12 +161,12 @@ layout: default
 
 
 <!-- 首页博客正文 -->
-<div class="content" style="border-radius: 15px">
+<div class="content" style="border-radius: 15px;font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;">
   <div class="posts">
    <!-- section 1.最近更新 -->
-   <a class="update" style="font-family: Chalkduster">
-    <h3 class="text" >Update</h3> 
-    <ul class="items" style="font-family: American Typewriter;font-size: 14px">
+   <a class="update" >
+    <h3 class="text" style="font-family: 'Lora', 'Times New Roman', serif;"><i>Update</i></h3> 
+    <ul class="items" font-size: 14px">
       {% for post in site.posts limit:5 %}
       <li class="item1" style="color:#BFEFFF" >
         <a href="{{ post.url }}"><u><i>
@@ -193,19 +198,22 @@ layout: default
          <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
        <!-- 常规博客 -->
        {% else %}
-         <h3 class="text" style="font-family: American Typewriter"><b> {{ post.title }} </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> {{ post.title }} </b></h3>
+         <div class="body">
             <p >
              {% if post.description %}
               {{ post.description | markdownify | strip_html }}
              {% else %}
                &nbsp;&nbsp; {{ post.excerpt | strip_html }}
              {% endif %}
-              <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
-               <u> {{ post.date | date: "%b %Y" }} </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="{{ page.date | date: "%Y-%m-%d" }}" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+              </i>
+            </p>
+            </info> 
        {% endif %}<!-- post.photo_url -->
       </div>
    </a>

@@ -38,6 +38,34 @@
         </ul>
       </header>
 
+      <style type="text/css">
+          li.item1 a:hover{
+            color:#EEAD0E;
+          }
+      </style>
+      <!-- 搜索功能 -->
+      <div id="search-container" style="float:right;position: fixed;right:10px; top:90px; z-index:999999;background:#333333;padding:5px 5px 5px 5px;">
+        <input type="text" id="search-input" placeholder="Type To Search" style="border:0px solid;height:35px;width:185px;border-radius:20px;padding-left:10px !important;font-family: American Typewriter;font-size: 8px" >
+        <ul id="results-container" style="max-width:300px;"></ul>
+
+      </div>
+      <!-- script pointing to jekyll-search.js-->
+      <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+      <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/js/search.json',
+        searchResultTemplate: '<li class="item1"><a href="{url}" style="font-family: American Typewriter;font-size: 8px" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 50,
+        fuzzy: false,
+        exclude: ['Welcome']
+        })
+      </script>
+      
+
+
       {{ content }}
 
       <footer>

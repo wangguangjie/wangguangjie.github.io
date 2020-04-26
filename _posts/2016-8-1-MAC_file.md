@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MAC文件目录"
+author: Guangjie
 ---
 >在OS X的系统中，不再有Windows用户熟悉的C盘、D盘，这是因为OS X底层是Unix系统，其目录机构符合Unix系统的规范。MAC机器主板使用了Intel主导的EFI标准，硬盘分区格式采用GPT。这种EFI+GPT的方式相比传统的BIOS＋MBR的方式有很多好处，具体可以参考我之前写的博客。
 

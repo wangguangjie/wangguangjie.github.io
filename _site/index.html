@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426102919" type="text/css">
+    <link rel="stylesheet" media="all" href="/res/screen.css?v=20200426165419" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/res/blogger.png">
     
     <script>
@@ -26,8 +26,7 @@
   </head>
 
   <body 
-         
-  style="background: linear-gradient(to left bottom, hsl(218, 100%, 85%) 0%,hsl(179, 100%, 85%) 100%)">
+         >
       <header  class="main">
 
         <h1 class="logo"><a href="/"><img style="border-radius: 40px" src="/res/icon.jpeg" width="80" height="80"></a></h1>
@@ -38,6 +37,34 @@
           <li><a href="/about/" title="About">About</a></li>  
         </ul>
       </header>
+
+      <style type="text/css">
+          li.item1 a:hover{
+            color:#EEAD0E;
+          }
+      </style>
+      <!-- 搜索功能 -->
+      <div id="search-container" style="float:right;position: fixed;right:10px; top:90px; z-index:999999;background:#333333;padding:5px 5px 5px 5px;">
+        <input type="text" id="search-input" placeholder="Type To Search" style="border:0px solid;height:35px;width:185px;border-radius:20px;padding-left:10px !important;font-family: American Typewriter;font-size: 8px" >
+        <ul id="results-container" style="max-width:300px;"></ul>
+
+      </div>
+      <!-- script pointing to jekyll-search.js-->
+      <script src="/js/simple-jekyll-search.min.js"></script>
+      <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/js/search.json',
+        searchResultTemplate: '<li class="item1"><a href="{url}" style="font-family: American Typewriter;font-size: 8px" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 50,
+        fuzzy: false,
+        exclude: ['Welcome']
+        })
+      </script>
+      
+
 
       <!-- 博客首页样式-->
 <style type="text/css">
@@ -70,8 +97,8 @@
   }
 
   a[href].post-excerpt, a[href].post-excerpt a[href] {
-    font-family: Chalkduster;
-    background: #F0FFFF;
+    font-family: font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    background: #FFFFFF;
     text-shadow: none;
   }
   a[href].post-excerpt:hover {
@@ -165,6 +192,11 @@
     white-space: nowrap;
   }
 
+  p.info {
+    opacity: 0.3
+    color: #000000;
+  }
+
   /* section3 查看更多设置*/
   div.end {
     text-align: right;
@@ -193,12 +225,12 @@
 
 
 <!-- 首页博客正文 -->
-<div class="content" style="border-radius: 15px">
+<div class="content" style="border-radius: 15px;font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;">
   <div class="posts">
    <!-- section 1.最近更新 -->
-   <a class="update" style="font-family: Chalkduster">
-    <h3 class="text" >Update</h3> 
-    <ul class="items" style="font-family: American Typewriter;font-size: 14px">
+   <a class="update" >
+    <h3 class="text" style="font-family: 'Lora', 'Times New Roman', serif;"><i>Update</i></h3> 
+    <ul class="items" font-size: 14px">
       
       <li class="item1" style="color:#BFEFFF" >
         <a href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%AD%A6%E4%B9%A0"><u><i>
@@ -241,8 +273,8 @@
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> 自然语言处理学习 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> 自然语言处理学习 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -251,11 +283,14 @@
 
 
              
-              <info datetime="">
-               <u> Dec 2019 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on December 23, 2019
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -267,8 +302,8 @@
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> 计算机视觉方向 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> 计算机视觉方向 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -276,11 +311,14 @@
 
 
              
-              <info datetime="">
-               <u> Dec 2019 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on December 17, 2019
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -292,8 +330,8 @@
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> 深度学习导图 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> 深度学习导图 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -301,11 +339,14 @@
 
 
              
-              <info datetime="">
-               <u> Dec 2019 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on December 16, 2019
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -317,8 +358,8 @@
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> 机器学习 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> 机器学习 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -326,11 +367,14 @@
 
 
              
-              <info datetime="">
-               <u> Dec 2019 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on December 13, 2019
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -342,8 +386,8 @@
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> AI学习 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> AI学习 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -352,11 +396,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Dec 2019 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on December 12, 2019
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -368,8 +415,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> ThreadLocal用法及源码分析 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> ThreadLocal用法及源码分析 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -379,11 +426,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Mar 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on March 18, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -395,8 +445,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Handler内存泄露分析 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Handler内存泄露分析 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -407,11 +457,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Mar 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on March 13, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -423,8 +476,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Java实现十大经典排序算法 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Java实现十大经典排序算法 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -433,11 +486,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Mar 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on March 11, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -449,8 +505,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Android 之 下拉刷新和加载更多 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Android 之 下拉刷新和加载更多 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -459,11 +515,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Feb 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on February 15, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -475,8 +534,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Android %n$d %n$s  </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Android %n$d %n$s  </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -485,11 +544,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Feb 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on February 14, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -501,8 +563,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Git 总结 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Git 总结 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -511,11 +573,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Feb 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on February 5, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -527,8 +592,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Github主机搭建博客(jekyll) </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Github主机搭建博客(jekyll) </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -537,11 +602,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Feb 2018 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on February 4, 2018
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -553,8 +621,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Android:信息爬取 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Android:信息爬取 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -563,11 +631,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Sep 2017 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on September 7, 2017
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -579,8 +650,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Git 总结 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Git 总结 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -589,11 +660,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Jun 2017 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on June 12, 2017
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -605,8 +679,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> 设计模式 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> 设计模式 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 可复用面向对象软件的基础
@@ -616,11 +690,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Oct 2016 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on October 1, 2016
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -632,8 +709,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> MAC文件目录 </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> MAC文件目录 </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 
@@ -642,11 +719,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Aug 2016 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on August 1, 2016
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -658,8 +738,8 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> Synchronized </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> Synchronized </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; Java Synchronized 关键字
@@ -671,11 +751,14 @@ http://www.baidu.com
 
 
              
-              <info datetime="">
-               <u> Jul 2016 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on July 8, 2016
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
@@ -687,19 +770,22 @@ http://www.baidu.com
        <div class="c">
         <!-- 有图片博客 -->
         
-         <h3 class="text" style="font-family: American Typewriter"><b> MVC </b></h3>
-         <div class="body" style="font-family: American Typewriter">
+         <h3 class="text" ><b> MVC </b></h3>
+         <div class="body">
             <p >
              
                &nbsp;&nbsp; 对mvc做一个简单的总结
 
 
              
-              <info datetime="">
-               <u> Apr 2016 </u>
-              </info>
            </p>
-         </div> 
+         </div>
+         <info  datetime="" >
+            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+              <i>Posted by Guangjie on April 10, 2016
+              </i>
+            </p>
+            </info> 
        <!-- post.photo_url -->
       </div>
    </a>
