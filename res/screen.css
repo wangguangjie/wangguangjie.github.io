@@ -163,7 +163,8 @@ header * {
   }
 
 /* main */
-#main { margin-bottom: 3em; }
+#main { margin-bottom: 3em;
+        margin-left: 30em }
 
 /* ------------------------------------------------------------------------------------------- */
 /* main content */
