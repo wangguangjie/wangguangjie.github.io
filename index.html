@@ -164,18 +164,6 @@ layout: default
 <div class="content" style="border-radius: 15px">
   <div class="posts">
    <!-- section 1.最近更新 -->
-   <a class="update" >
-    <h3 class="text" ><i>Update</i></h3> 
-    <ul class="items" style="font-size: 13px;display: inline;">
-      {% for post in site.posts limit:5 %}
-      <li class="item1" style="color:#BFEFFF" >
-        <a href="{{ post.url }}"><u><i>
-         {{ post.date | date:"%b %Y" }} - 更新了{{ post.title }} </u></i>
-        </a>
-      </li>
-     {% endfor %}
-   </ul> 
-   </a>
 
    <!-- section2 博客列表 -->
    {% for post in site.posts limit:50 %}
