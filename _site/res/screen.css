@@ -175,6 +175,7 @@ div.content {
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 10px;
+  width:91%;
 }
 div.content.photo {
   padding: 0;
