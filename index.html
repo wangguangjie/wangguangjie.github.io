@@ -162,7 +162,7 @@ layout: default
 
 <!-- 首页博客正文 -->
 <div class="content" style="border-radius: 15px">
-  <div class="posts" style="max-width: 100%">
+  <div class="posts" style="max-width: 100%;">
    <!-- section 1.最近更新 -->
 
    <!-- section2 博客列表 -->
@@ -170,7 +170,7 @@ layout: default
    <div href="{{ post.url }}"
      class="post-excerpt{% if post.photo_url %} photo{% endif %}">
        <!-- 判断是否有图片博客-->
-       <div class="c" style="background: #FFD700; max-width: 100%">
+       <div class="c" style=" max-width: 100%">
         <!-- 有图片博客 -->
         {% if post.photo_url %}
          <h3><u><b> {{ post.title }} </b></u></h3>
@@ -197,7 +197,7 @@ layout: default
            </p>
          </div>
          <info  datetime="{{ page.date | date: "%Y-%m-%d" }}" >
-            <p class="info" style="color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
+            <p class="info" style="max-width: 100%;color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
               <i>Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
               </i>
             </p>
