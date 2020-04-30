@@ -196,7 +196,7 @@ layout: default
              {% endif %}
            </p>
          </div>
-         <info  datetime="{{ page.date | date: "%Y-%m-%d" }}" >
+         <info  style= "max-width: 100%" datetime="{{ page.date | date: "%Y-%m-%d" }}" >
             <p class="info" style="max-width: 100%;color: #000000;opacity: 0.2;font-family: 'Lora', 'Times New Roman', serif;">
               <i>Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
               </i>
