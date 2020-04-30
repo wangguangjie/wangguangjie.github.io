@@ -167,7 +167,6 @@ layout: default
 
    <!-- section2 博客列表 -->
    {% for post in site.posts limit:50 %}
-   <hr></hr>
    <a href="{{ post.url }}"
      class="post-excerpt{% if post.photo_url %} photo{% endif %}">
        <!-- 判断是否有图片博客-->
@@ -206,6 +205,7 @@ layout: default
        {% endif %}<!-- post.photo_url -->
       </div>
    </a>
+   <hr></hr>
    {% endfor %}
    
    <!-- Section3 查看更多博客-->
