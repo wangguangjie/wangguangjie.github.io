@@ -92,7 +92,7 @@ header {
   height: 90px;
   cursor: default;
   margin-top: 10px;
-  font-family: Chalkduster,Apple Chancery
+  font-family: Chalkduster,Apple Chancery,'Lora', 'Times New Roman', serif
 }
 header * {
   cursor: pointer;
