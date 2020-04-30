@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>{% if page.title %}{{ page.title }}{% else %}光杰的博客{% endif %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8,user-scalable=yes;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -43,7 +43,7 @@
           }
       </style>
       <!-- 搜索功能 -->
-      <div id="search-container" style="float:left;height:35px;position: fixed;right:30px; top:99px; z-index:999999;width: 14%;padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 0">
+      <div id="search-container" style="float:left;height:35px;position: fixed;right:75px; top:99px; z-index:999999;width: 14%;padding-left: 0;padding-right: 0;padding-top: 0;padding-bottom: 0">
         <input type="text" id="search-input" placeholder="Type To Search" style="border:0px solid;height:35px;width:100%;border-radius:20px;padding-left:10px !important;font-family: 'Lora', 'Times New Roman', serif;font-size: 8px;" >
         <ul id="results-container" style="padding-left: 10%;max-width:100%;">
         </ul>
@@ -66,9 +66,9 @@
       </script>
       <!-- 显示最新更新 -->
       <!-- section 1.最近更新 -->
-      <div class="update" style="float:left;height:300px;position: fixed; left:30px;top:83px;z-index:999999;" >
+      <div class="update" style="float:left;height:300px;position: fixed; left:70px;top:83px;z-index:999999;" >
        
-        <ul  style="position: fixed; font-size: 13px;max-width:14%;vertical-align: middle;">
+        <ul  style="position: fixed; font-size: 13px;max-width:16%;vertical-align: middle;">
           {% for post in site.posts limit:9 %}
           <li class="item11" style="color:#000000" >
             <a href="{{ post.url }}" >
