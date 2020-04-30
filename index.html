@@ -162,12 +162,12 @@ layout: default
 
 <!-- 首页博客正文 -->
 <div class="content" style="border-radius: 15px">
-  <div class="posts">
+  <div class="posts" style="max-width: 100%">
    <!-- section 1.最近更新 -->
 
    <!-- section2 博客列表 -->
    {% for post in site.posts limit:50 %}
-   <a href="{{ post.url }}"
+   <div href="{{ post.url }}"
      class="post-excerpt{% if post.photo_url %} photo{% endif %}">
        <!-- 判断是否有图片博客-->
        <div class="c" style="background: #FFD700; max-width: 100%">
@@ -204,8 +204,9 @@ layout: default
             </info> 
        {% endif %}<!-- post.photo_url -->
       </div>
-   </a>
-   <hr></hr>
+     <hr></hr> 
+   </div>
+   
    {% endfor %}
    
    <!-- Section3 查看更多博客-->
