@@ -10,7 +10,7 @@ body {
   font-size:15px;
   line-height:1.9;
 
-  max-width:1024px;
+  max-width:70%;
   margin: 0 auto;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -171,12 +171,10 @@ header * {
 div.content {
   background:white;
   margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 10%;
+
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 10px;
-  width:91%;
 }
 div.content.photo {
   padding: 0;
